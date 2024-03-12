@@ -1,0 +1,45 @@
+{
+  "result": 1,
+  "data": [
+    {
+      "id": 1,
+      "name": "Crypto Trade",
+      "closed": true,
+      "avatar_color": "#000000",
+      "members_count": 28462,
+      "friends": [
+        {
+          "first_name": "Pavel",
+          "last_name": "Durov"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Take Risk",
+      "closed": false,
+      "avatar_color": "#ff0000",
+      "members_count": 73511
+    },
+    {
+      "id": 3,
+      "name": "Day Capital",
+      "closed": true,
+      "members_count": 103245,
+      "friends": [
+        {
+          "first_name": "Pavel",
+          "last_name": "Durov"
+        },
+        {
+          "first_name": "Tim",
+          "last_name": "Cook"
+        },
+        {
+          "first_name": "Lisa",
+          "last_name": "Su"
+        }
+      ]
+    }
+  ]
+}
