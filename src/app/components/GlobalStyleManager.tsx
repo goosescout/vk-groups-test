@@ -10,6 +10,7 @@ const Common = createGlobalStyle`
     --color-black: #000000;
     --color-background: #f7f8fA;
     --color-text: #222222;
+    --color-secondary-text: #666666;
     --color-border: #dddddd;
   }
 

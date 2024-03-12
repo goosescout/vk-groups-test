@@ -12,6 +12,12 @@ const defaultParams = {
   lineHeight: "normal",
 }
 
+export const text16Medium = {
+  ...defaultParams,
+  fontFamily: family.medium,
+  fontSize: "16px",
+}
+
 export const header36 = {
   ...defaultParams,
   fontFamily: family.bold,
