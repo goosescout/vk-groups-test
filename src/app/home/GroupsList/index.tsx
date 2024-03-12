@@ -13,7 +13,7 @@ export default function GroupsFilter() {
     ({ filters }) => filters
   )
 
-  const { data: { data: groups } = {} } = useGetGroupsQuery()
+  const { data: { data: groups } = {}, error, isFetching } = useGetGroupsQuery()
 
   const filteredGroups = useMemo(() => {
     if (!groups) return []
@@ -25,6 +25,10 @@ export default function GroupsFilter() {
         hasFriendsFilter(group, hasFriends)
     )
   }, [avatarColor, groups, hasFriends, privacy])
+
+  if (isFetching) return <Text>Загрузка...</Text>
+
+  if (error) return <Text>Ошибка загрузки</Text>
 
   if (!groups) return null
 

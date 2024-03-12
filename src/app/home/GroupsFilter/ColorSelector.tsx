@@ -14,7 +14,7 @@ export default function ColorSelector() {
   const { data: { data: groups } = {} } = useGetGroupsQuery()
 
   const colors = useMemo(() => {
-    if (!groups) return []
+    if (!groups) return [{ label: "Все", value: "all" }]
 
     const colors = new Set<{
       label: string

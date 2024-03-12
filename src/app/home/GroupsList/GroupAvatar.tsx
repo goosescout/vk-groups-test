@@ -13,5 +13,7 @@ const Wrapper = styled.div<{ $color: string | undefined }>`
   height: 24px;
   border-radius: 50%;
 
-  background-color: ${({ $color }) => $color ?? "var(--color-background)"};
+  background-color: ${({ $color }) => $color ?? "transparent"};
+  border: ${({ $color }) =>
+    $color ? "1px solid var(--color-border)" : "none"};
 `
