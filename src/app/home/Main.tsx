@@ -1,7 +1,9 @@
 import { Div } from "@vkontakte/vkui"
 import styled from "styled-components"
 
-import GroupsFilter from "@/home/GroupFilter"
+import GroupsFilter from "./GroupsFilter"
+import GroupsList from "./GroupsList"
+
 import { header36 } from "@/utils/fonts"
 
 export default function Main() {
@@ -9,6 +11,7 @@ export default function Main() {
     <Wrapper>
       <Header>Группы</Header>
       <GroupsFilter />
+      <GroupsList />
     </Wrapper>
   )
 }

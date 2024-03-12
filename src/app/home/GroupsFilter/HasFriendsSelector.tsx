@@ -20,7 +20,9 @@ export default function HasFriendsSelector() {
     ({ currentTarget }) => {
       dispatch(
         setHasFriends(
-          currentTarget.value === "all" ? "all" : currentTarget.value === "true"
+          currentTarget.value === "all"
+            ? "all"
+            : currentTarget.value === Boolean(true).toString()
         )
       )
     },

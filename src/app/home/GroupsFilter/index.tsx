@@ -1,4 +1,4 @@
-import { Panel, FormLayoutGroup } from "@vkontakte/vkui"
+import { Div, FormLayoutGroup } from "@vkontakte/vkui"
 import styled from "styled-components"
 
 import ColorSelector from "./ColorSelector"
@@ -9,18 +9,19 @@ import { text16Medium } from "@/utils/fonts"
 
 export default function GroupsFilter() {
   return (
-    <Panel>
-      <Header>Фильтры:</Header>
+    <Div>
+      <Header>Фильтры</Header>
       <FormLayoutGroup mode="horizontal">
         <PrivacySelector />
         <ColorSelector />
         <HasFriendsSelector />
       </FormLayoutGroup>
-    </Panel>
+    </Div>
   )
 }
 
 const Header = styled.h2`
   ${text16Medium};
   color: var(--color-secondary-text);
+  padding: 0 16px;
 `
