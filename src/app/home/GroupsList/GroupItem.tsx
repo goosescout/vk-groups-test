@@ -1,7 +1,8 @@
-import { SimpleCell } from "@vkontakte/vkui"
+import { useMemo, useState } from "react"
+
+import { SimpleCell, Button, Text, Title } from "@vkontakte/vkui"
 
 import GroupAvatar from "./GroupAvatar"
-import ShowFriends from "./ShowFriends"
 
 import { Group } from "@/store/api/groups/types"
 
@@ -14,16 +15,35 @@ export default function GroupItem({
   members_count: membersCount,
   friends = [],
 }: GroupItemProps) {
-  const subtitle = `${closed ? "Приватная" : "Публичная"}, ${membersCount} ${getCountCase(membersCount)}`
-  const after = friends.length ? <ShowFriends friends={friends} /> : null
+  const [isShowingFriends, setIsShowingFriends] = useState(false)
+
+  const handleClick = () => setIsShowingFriends(prev => !prev)
+
+  const friendsString = useMemo(
+    () =>
+      "Друзья: " +
+      friends
+        .map(({ first_name, last_name }) => `${first_name} ${last_name}`)
+        .join(", "),
+    [friends]
+  )
+
+  const Subtitle = `${closed ? "Приватная" : "Публичная"}, ${membersCount} ${getCountCase(membersCount)}`
+  const After = friends.length ? (
+    <Button mode="link" onClick={handleClick}>
+      {isShowingFriends ? "Скрыть" : "Показать"} друзей ({friends.length})
+    </Button>
+  ) : null
 
   return (
     <SimpleCell
+      multiline
       before={<GroupAvatar avatarColor={avatarColor} />}
-      subtitle={subtitle}
-      after={after}
+      subtitle={Subtitle}
+      after={After}
     >
-      {name}
+      <Title level="3">{name}</Title>
+      {isShowingFriends && <Text>{friendsString}</Text>}
     </SimpleCell>
   )
 }
